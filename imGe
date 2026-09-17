@@ -6,5 +6,5 @@
         ),
         url("1000017575.jpg") center center / cover no-repeat;
 
-    min-height:100vh;
+    min-height:99vh;
 }
