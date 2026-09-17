@@ -1,57 +1,449 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rautara Blue Star Yubo Sangho 2026</title>
-  <style>
-    body{margin:0;font-family:Arial;background:#120000;color:white}
-    header{background:linear-gradient(#7a0000,#d10000);padding:40px;text-align:center}
-    h1{font-size:34px;color:#FFD700}
-    .btn{background:#FFD700;color:#7a0000;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:bold}
-    section{padding:25px}
-    h2{color:#FFD700}
-    .card{background:#220000;padding:18px;border-radius:15px;margin:15px 0}
-    footer{background:#7a0000;padding:20px;text-align:center}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rautara Blue Star Yubo Sangho | Durga Puja 2026</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial, "Noto Sans Bengali", sans-serif;
+  background:#080808;
+  color:#fff;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.72)),
+    url("1000017575.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+}
+
+.hero-content{
+  max-width:900px;
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 18px;
+  border:1px solid #ffd700;
+  border-radius:30px;
+  color:#ffd700;
+  background:rgba(0,0,0,.55);
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(32px,6vw,70px);
+  color:#ffd700;
+  text-shadow:0 3px 15px #000;
+}
+
+.hero p{
+  font-size:18px;
+  margin:12px 0 25px;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  background:#ffd700;
+  color:#650000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:30px;
+  margin:5px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+}
+
+/* NAV */
+nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(20,0,0,.95);
+  border-bottom:1px solid #6e4c00;
+  text-align:center;
+  padding:14px 5px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 12px;
+  font-size:14px;
+}
+
+nav a:hover{
+  color:#ffd700;
+}
+
+/* COMMON */
+section{
+  padding:70px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.title h2{
+  color:#ffd700;
+  font-size:34px;
+}
+
+.title p{
+  color:#ccc;
+  margin-top:8px;
+}
+
+/* ABOUT */
+.about{
+  text-align:center;
+  line-height:1.8;
+  color:#ddd;
+  font-size:17px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:linear-gradient(145deg,#250000,#100000);
+  border:1px solid #704d00;
+  border-radius:18px;
+  padding:25px;
+  text-align:center;
+}
+
+.card h3{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#ccc;
+  line-height:1.6;
+}
+
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+}
+
+.gallery div{
+  height:220px;
+  background:#1a1a1a;
+  border-radius:15px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#888;
+  border:1px solid #333;
+}
+
+/* LOCATION */
+.location{
+  text-align:center;
+}
+
+.map-btn{
+  margin-top:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#190000;
+  border-top:1px solid #704d00;
+  text-align:center;
+  padding:35px 20px;
+}
+
+footer h3{
+  color:#ffd700;
+  margin-bottom:10px;
+}
+
+footer p{
+  color:#aaa;
+  font-size:14px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+
+  nav a{
+    margin:0 5px;
+    font-size:12px;
+  }
+
+  .hero{
+    min-height:90vh;
+    padding-bottom:35px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  section{
+    padding:50px 18px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>🌺 Rautara Blue Star Yubo Sangho 🌺</h1>
-  <p>Durga Puja 2026 | রাউতাড়া, কুলটিকারি, শ্যামপুর, হাওড়া</p>
-  <a class="btn" href="#schedule">Puja Schedule</a>
+<!-- HERO -->
+<header class="hero">
+
+  <div class="hero-content">
+
+    <div class="badge">
+      ✨ দুর্গাপূজা ২০২৬ ✨
+    </div>
+
+    <h1>
+      Rautara Blue Star Yubo Sangho
+    </h1>
+
+    <p>
+      রাউতাড়া, শ্যামপুর, হাওড়া
+      <br>
+      Celebrating Durga Puja with devotion, culture & togetherness
+    </p>
+
+    <a href="#about" class="btn">
+      Explore Puja
+    </a>
+
+  </div>
+
 </header>
 
-<section>
-  <h2>শুভ দুর্গাপূজা ২০২৬</h2>
-  <p>আপনাদের সবাইকে Rautara Blue Star Yubo Sangho-এর পক্ষ থেকে আন্তরিক শুভেচ্ছা ও অভিনন্দন।</p>
-</section>
 
-<section id="schedule">
-  <h2>🪔 Puja Schedule</h2>
-  <div class="card">
-    <p>ষষ্ঠী - 16 October 2026</p>
-    <p>সপ্তমী - 17 October 2026</p>
-    <p>অষ্টমী - 18 October 2026</p>
-    <p>নবমী - 19 October 2026</p>
-    <p>দশমী - 20 October 2026</p>
+<!-- NAVIGATION -->
+<nav>
+  <a href="#about">About</a>
+  <a href="#puja">Puja</a>
+  <a href="#events">Events</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#location">Location</a>
+</nav>
+
+
+<!-- ABOUT -->
+<section id="about">
+
+  <div class="title">
+    <h2>🌺 আমাদের পুজো</h2>
+    <p>About Our Puja</p>
   </div>
+
+  <div class="about">
+
+    <p>
+      Rautara Blue Star Yubo Sangho-এর পক্ষ থেকে
+      সকলকে জানাই আন্তরিক শুভেচ্ছা ও শারদীয়ার অভিনন্দন।
+    </p>
+
+    <br>
+
+    <p>
+      আমাদের দুর্গাপূজা শুধুমাত্র একটি উৎসব নয়,
+      এটি আমাদের সংস্কৃতি, ঐতিহ্য এবং মানুষের মিলনের
+      একটি সুন্দর উদযাপন।
+    </p>
+
+  </div>
+
 </section>
 
-<section>
-  <h2>📍 Location</h2>
-  <p>Rautara, Kultikari, Shyampur, Howrah - 711312</p>
+
+<!-- PUJA -->
+<section id="puja">
+
+  <div class="title">
+    <h2>🪔 Durga Puja 2026</h2>
+    <p>শারদ উৎসবের বিভিন্ন আয়োজন</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🌸 মহালয়া</h3>
+      <p>
+        দেবীপক্ষের শুভ সূচনা।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🪔 ষষ্ঠী</h3>
+      <p>
+        দেবীর বোধন ও পুজোর শুভ সূচনা।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🌺 সপ্তমী</h3>
+      <p>
+        সপ্তমীর পূজা ও বিশেষ আয়োজন।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🙏 অষ্টমী</h3>
+      <p>
+        অষ্টমীর অঞ্জলি ও সন্ধিপূজা।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>✨ নবমী</h3>
+      <p>
+        নবমীর বিশেষ পূজা ও সাংস্কৃতিক অনুষ্ঠান।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🌼 দশমী</h3>
+      <p>
+        সিঁদুর খেলা ও বিসর্জনের আয়োজন।
+      </p>
+    </div>
+
+  </div>
+
 </section>
 
-<section>
-  <h2>📸 Gallery</h2>
-  <p>Durga Puja 2026-এর ছবি ও ভিডিও এখানে যোগ করা হবে।</p>
+
+<!-- EVENTS -->
+<section id="events">
+
+  <div class="title">
+    <h2>🎭 Events & Programs</h2>
+    <p>সাংস্কৃতিক অনুষ্ঠান ও বিশেষ আয়োজন</p>
+  </div>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>🎶 Cultural Program</h3>
+      <p>
+        গান, নাচ ও বিভিন্ন সাংস্কৃতিক অনুষ্ঠান।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🥁 Dhak & Dhunuchi</h3>
+      <p>
+        ঢাকের বাদ্যি ও ধুনুচি নাচের বিশেষ আয়োজন।
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🏆 Competition</h3>
+      <p>
+        শিশু ও সকল বয়সের জন্য বিভিন্ন প্রতিযোগিতা।
+      </p>
+    </div>
+
+  </div>
+
 </section>
 
+
+<!-- GALLERY -->
+<section id="gallery">
+
+  <div class="title">
+    <h2>📸 Gallery</h2>
+    <p>Our Puja Memories</p>
+  </div>
+
+  <div class="gallery">
+
+    <div>📷 Photo Coming Soon</div>
+    <div>📷 Photo Coming Soon</div>
+    <div>📷 Photo Coming Soon</div>
+    <div>📷 Photo Coming Soon</div>
+
+  </div>
+
+</section>
+
+
+<!-- LOCATION -->
+<section id="location">
+
+  <div class="title">
+    <h2>📍 Visit Us</h2>
+    <p>আমাদের পুজো প্রাঙ্গণে আপনাকে স্বাগতম</p>
+  </div>
+
+  <div class="location">
+
+    <p>
+      Rautara, Kultikari, Shyampur,
+      Howrah, West Bengal - 711312
+    </p>
+
+    <a
+      class="btn map-btn"
+      href="https://www.google.com/maps/search/?api=1&query=Rautara,Kultikari,Shyampur,Howrah,711312"
+      target="_blank">
+      📍 Open Google Maps
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
 <footer>
+
   <h3>Rautara Blue Star Yubo Sangho</h3>
-  <p>© Durga Puja 2026 | শুভ শারদীয়া</p>
+
+  <p>
+    শুভ শারদীয়া 🌺
+  </p>
+
+  <p>
+    © 2026 Rautara Blue Star Yubo Sangho
+  </p>
+
 </footer>
 
 </body>
