@@ -18,115 +18,176 @@ html{
 }
 
 body{
-  font-family:Arial, "Noto Sans Bengali", sans-serif;
+  font-family:Arial,"Noto Sans Bengali",sans-serif;
   background:#080808;
   color:#fff;
+  overflow-x:hidden;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.72)),
-    url("1000017575.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-}
-
-.hero-content{
-  max-width:900px;
-}
-
-.badge{
-  display:inline-block;
-  padding:8px 18px;
-  border:1px solid #ffd700;
-  border-radius:30px;
-  color:#ffd700;
-  background:rgba(0,0,0,.55);
-  margin-bottom:15px;
-}
-
-.hero h1{
-  font-size:clamp(32px,6vw,70px);
-  color:#ffd700;
-  text-shadow:0 3px 15px #000;
-}
-
-.hero p{
-  font-size:18px;
-  margin:12px 0 25px;
-}
-
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  background:#ffd700;
-  color:#650000;
-  text-decoration:none;
-  font-weight:bold;
-  border-radius:30px;
-  margin:5px;
-  transition:.3s;
-}
-
-.btn:hover{
-  transform:translateY(-3px);
-}
-
-/* NAV */
+/* NAVIGATION */
 nav{
-  position:sticky;
+  position:fixed;
   top:0;
-  z-index:100;
-  background:rgba(20,0,0,.95);
-  border-bottom:1px solid #6e4c00;
-  text-align:center;
-  padding:14px 5px;
+  left:0;
+  width:100%;
+  z-index:999;
+  padding:15px 4%;
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  background:rgba(20,0,0,.88);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,215,0,.35);
 }
 
 nav a{
-  color:white;
+  color:#fff;
   text-decoration:none;
-  margin:0 12px;
   font-size:14px;
+  transition:.3s;
 }
 
 nav a:hover{
   color:#ffd700;
 }
 
-/* COMMON */
-section{
-  padding:70px 20px;
-  max-width:1100px;
-  margin:auto;
-}
+/* HERO */
+.hero{
+  min-height:100vh;
 
-.title{
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,.05),
+      rgba(0,0,0,.35),
+      #080808
+    ),
+    url("1000017575.jpg") center/cover no-repeat;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+
   text-align:center;
-  margin-bottom:35px;
+  padding:120px 20px 70px;
 }
 
-.title h2{
+.hero-content{
+  max-width:950px;
+  animation:fadeUp 1.2s ease;
+}
+
+.badge{
+  display:inline-block;
+  padding:9px 20px;
+  border:1px solid #ffd700;
+  border-radius:30px;
   color:#ffd700;
-  font-size:34px;
+  background:rgba(0,0,0,.5);
+  margin-bottom:18px;
 }
 
-.title p{
-  color:#ccc;
-  margin-top:8px;
+.hero h1{
+  font-size:clamp(38px,7vw,76px);
+  line-height:1.1;
+  color:#ffd700;
+  text-shadow:0 4px 25px #000;
+}
+
+.hero p{
+  font-size:18px;
+  line-height:1.7;
+  margin:18px 0 28px;
+  text-shadow:0 2px 10px #000;
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 28px;
+  margin:5px;
+  background:#ffd700;
+  color:#650000;
+  text-decoration:none;
+  font-weight:bold;
+  border-radius:40px;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 25px rgba(255,215,0,.25);
+}
+
+.btn-outline{
+  background:transparent;
+  color:#fff;
+  border:1px solid #ffd700;
+}
+
+/* SECTIONS */
+section{
+  max-width:1150px;
+  margin:auto;
+  padding:85px 20px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.section-title h2{
+  color:#ffd700;
+  font-size:36px;
+}
+
+.section-title p{
+  color:#aaa;
+  margin-top:10px;
 }
 
 /* ABOUT */
-.about{
+.about-box{
+  background:linear-gradient(145deg,#250000,#100000);
+  border:1px solid #684900;
+  border-radius:25px;
+  padding:35px;
   text-align:center;
-  line-height:1.8;
+  line-height:1.9;
+  box-shadow:0 15px 50px rgba(0,0,0,.35);
+}
+
+.about-box p{
   color:#ddd;
   font-size:17px;
+}
+
+/* COUNTDOWN */
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px;
+  max-width:750px;
+  margin:auto;
+}
+
+.time-box{
+  background:#170000;
+  border:1px solid #705000;
+  border-radius:18px;
+  padding:22px 10px;
+  text-align:center;
+}
+
+.time-box strong{
+  display:block;
+  font-size:36px;
+  color:#ffd700;
+}
+
+.time-box span{
+  color:#aaa;
+  font-size:13px;
 }
 
 /* CARDS */
@@ -137,11 +198,22 @@ section{
 }
 
 .card{
-  background:linear-gradient(145deg,#250000,#100000);
-  border:1px solid #704d00;
-  border-radius:18px;
-  padding:25px;
+  background:linear-gradient(145deg,#240000,#100000);
+  border:1px solid #634600;
+  border-radius:20px;
+  padding:28px 20px;
   text-align:center;
+  transition:.35s;
+}
+
+.card:hover{
+  transform:translateY(-7px);
+  border-color:#ffd700;
+}
+
+.card-icon{
+  font-size:36px;
+  margin-bottom:12px;
 }
 
 .card h3{
@@ -150,26 +222,87 @@ section{
 }
 
 .card p{
-  color:#ccc;
-  line-height:1.6;
+  color:#bbb;
+  line-height:1.7;
+}
+
+/* SCHEDULE */
+.schedule{
+  overflow-x:auto;
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:600px;
+  background:#160000;
+  border-radius:15px;
+  overflow:hidden;
+}
+
+th,td{
+  padding:16px;
+  border-bottom:1px solid #432d00;
+  text-align:center;
+}
+
+th{
+  color:#ffd700;
+  background:#250000;
+}
+
+td{
+  color:#ddd;
 }
 
 /* GALLERY */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
 }
 
-.gallery div{
-  height:220px;
-  background:#1a1a1a;
+.gallery img{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid #604500;
+  transition:.4s;
+}
+
+.gallery img:hover{
+  transform:scale(1.025);
+  border-color:#ffd700;
+}
+
+/* DONATION */
+.donation{
+  background:linear-gradient(145deg,#270000,#100000);
+  border:1px solid #725000;
+  border-radius:25px;
+  padding:40px 20px;
+  text-align:center;
+}
+
+.donation h2{
+  color:#ffd700;
+  margin-bottom:12px;
+}
+
+.donation p{
+  color:#ccc;
+  line-height:1.7;
+}
+
+.qr{
+  width:280px;
+  max-width:90%;
+  margin:25px auto;
+  display:block;
+  background:#fff;
+  padding:10px;
   border-radius:15px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#888;
-  border:1px solid #333;
 }
 
 /* LOCATION */
@@ -177,39 +310,65 @@ section{
   text-align:center;
 }
 
-.map-btn{
-  margin-top:20px;
+.address{
+  color:#ddd;
+  line-height:1.8;
+  font-size:17px;
 }
 
 /* FOOTER */
 footer{
-  background:#190000;
-  border-top:1px solid #704d00;
+  background:#150000;
+  border-top:1px solid #684900;
   text-align:center;
-  padding:35px 20px;
+  padding:40px 20px;
 }
 
 footer h3{
   color:#ffd700;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
 footer p{
-  color:#aaa;
-  font-size:14px;
+  color:#999;
+  margin:5px;
+}
+
+/* ANIMATION */
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 /* MOBILE */
-@media(max-width:600px){
+@media(max-width:650px){
+
+  nav{
+    gap:14px;
+    padding:12px 5px;
+    justify-content:flex-start;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
 
   nav a{
-    margin:0 5px;
     font-size:12px;
   }
 
   .hero{
     min-height:90vh;
-    padding-bottom:35px;
+    padding:110px 18px 55px;
+  }
+
+  .hero h1{
+    font-size:38px;
   }
 
   .hero p{
@@ -217,234 +376,490 @@ footer p{
   }
 
   section{
-    padding:50px 18px;
+    padding:60px 16px;
+  }
+
+  .section-title h2{
+    font-size:29px;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .time-box strong{
+    font-size:28px;
+  }
+
+  .gallery img{
+    height:220px;
   }
 }
+
 </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION -->
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#about">আমাদের পুজো</a>
+<a href="#puja">Puja</a>
+<a href="#events">Events</a>
+<a href="#gallery">Gallery</a>
+<a href="#donation">Donation</a>
+<a href="#location">Location</a>
+
+</nav>
+
+
 <!-- HERO -->
-<header class="hero">
 
-  <div class="hero-content">
+<header class="hero" id="home">
 
-    <div class="badge">
-      ✨ দুর্গাপূজা ২০২৬ ✨
-    </div>
+<div class="hero-content">
 
-    <h1>
-      Rautara Blue Star Yubo Sangho
-    </h1>
+<div class="badge">
+✨ দুর্গাপূজা ২০২৬ ✨
+</div>
 
-    <p>
-      রাউতাড়া, শ্যামপুর, হাওড়া
-      <br>
-      Celebrating Durga Puja with devotion, culture & togetherness
-    </p>
+<h1>
+Rautara Blue Star Yubo Sangho
+</h1>
 
-    <a href="#about" class="btn">
-      Explore Puja
-    </a>
+<p>
 
-  </div>
+রাউতাড়া, কুলটিকারি, শ্যামপুর, হাওড়া
+
+<br>
+
+Celebrating Durga Puja with Devotion, Culture & Togetherness
+
+</p>
+
+<a href="#about" class="btn">
+🌺 আমাদের পুজো
+</a>
+
+<a href="#gallery" class="btn btn-outline">
+📸 Gallery
+</a>
+
+</div>
 
 </header>
 
 
-<!-- NAVIGATION -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#puja">Puja</a>
-  <a href="#events">Events</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#location">Location</a>
-</nav>
-
-
 <!-- ABOUT -->
+
 <section id="about">
 
-  <div class="title">
-    <h2>🌺 আমাদের পুজো</h2>
-    <p>About Our Puja</p>
-  </div>
+<div class="section-title">
 
-  <div class="about">
+<h2>🌺 আমাদের পুজো</h2>
 
-    <p>
-      Rautara Blue Star Yubo Sangho-এর পক্ষ থেকে
-      সকলকে জানাই আন্তরিক শুভেচ্ছা ও শারদীয়ার অভিনন্দন।
-    </p>
+<p>About Our Durga Puja</p>
 
-    <br>
+</div>
 
-    <p>
-      আমাদের দুর্গাপূজা শুধুমাত্র একটি উৎসব নয়,
-      এটি আমাদের সংস্কৃতি, ঐতিহ্য এবং মানুষের মিলনের
-      একটি সুন্দর উদযাপন।
-    </p>
+<div class="about-box">
 
-  </div>
+<p>
+
+<strong>Rautara Blue Star Yubo Sangho</strong>-এর পক্ষ থেকে
+সকলকে জানাই আন্তরিক শুভেচ্ছা ও শারদীয়ার অভিনন্দন।
+
+</p>
+
+<br>
+
+<p>
+
+দুর্গাপূজা আমাদের কাছে শুধুমাত্র একটি উৎসব নয়।
+এটি আমাদের সংস্কৃতি, ঐতিহ্য, আনন্দ এবং
+সকলের মিলনমেলার একটি বিশেষ মুহূর্ত।
+
+</p>
+
+<br>
+
+<p>
+
+এই শারদ উৎসবে আপনাদের সকলকে
+আমাদের পুজো প্রাঙ্গণে সাদর আমন্ত্রণ।
+
+</p>
+
+</div>
 
 </section>
 
 
-<!-- PUJA -->
+<!-- COUNTDOWN -->
+
+<section>
+
+<div class="section-title">
+
+<h2>⏳ Puja Countdown</h2>
+
+<p>দুর্গাপূজা শুরু হতে আর কতদিন?</p>
+
+</div>
+
+<div class="countdown">
+
+<div class="time-box">
+<strong id="days">00</strong>
+<span>Days</span>
+</div>
+
+<div class="time-box">
+<strong id="hours">00</strong>
+<span>Hours</span>
+</div>
+
+<div class="time-box">
+<strong id="minutes">00</strong>
+<span>Minutes</span>
+</div>
+
+<div class="time-box">
+<strong id="seconds">00</strong>
+<span>Seconds</span>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PUJA SCHEDULE -->
+
 <section id="puja">
 
-  <div class="title">
-    <h2>🪔 Durga Puja 2026</h2>
-    <p>শারদ উৎসবের বিভিন্ন আয়োজন</p>
-  </div>
+<div class="section-title">
 
-  <div class="cards">
+<h2>🪔 Puja Schedule</h2>
 
-    <div class="card">
-      <h3>🌸 মহালয়া</h3>
-      <p>
-        দেবীপক্ষের শুভ সূচনা।
-      </p>
-    </div>
+<p>দুর্গাপূজা ২০২৬-এর সম্ভাব্য সময়সূচি</p>
 
-    <div class="card">
-      <h3>🪔 ষষ্ঠী</h3>
-      <p>
-        দেবীর বোধন ও পুজোর শুভ সূচনা।
-      </p>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>🌺 সপ্তমী</h3>
-      <p>
-        সপ্তমীর পূজা ও বিশেষ আয়োজন।
-      </p>
-    </div>
+<div class="schedule">
 
-    <div class="card">
-      <h3>🙏 অষ্টমী</h3>
-      <p>
-        অষ্টমীর অঞ্জলি ও সন্ধিপূজা।
-      </p>
-    </div>
+<table>
 
-    <div class="card">
-      <h3>✨ নবমী</h3>
-      <p>
-        নবমীর বিশেষ পূজা ও সাংস্কৃতিক অনুষ্ঠান।
-      </p>
-    </div>
+<tr>
+<th>দিন</th>
+<th>তারিখ</th>
+<th>বিশেষ আয়োজন</th>
+</tr>
 
-    <div class="card">
-      <h3>🌼 দশমী</h3>
-      <p>
-        সিঁদুর খেলা ও বিসর্জনের আয়োজন।
-      </p>
-    </div>
+<tr>
+<td>ষষ্ঠী</td>
+<td>১৬ অক্টোবর</td>
+<td>বোধন ও পুজোর সূচনা</td>
+</tr>
 
-  </div>
+<tr>
+<td>সপ্তমী</td>
+<td>১৭ অক্টোবর</td>
+<td>সপ্তমীর পূজা</td>
+</tr>
+
+<tr>
+<td>অষ্টমী</td>
+<td>১৮ অক্টোবর</td>
+<td>অঞ্জলি ও সন্ধিপূজা</td>
+</tr>
+
+<tr>
+<td>নবমী</td>
+<td>১৯ অক্টোবর</td>
+<td>নবমীর বিশেষ পূজা</td>
+</tr>
+
+<tr>
+<td>দশমী</td>
+<td>২০ অক্টোবর</td>
+<td>সিঁদুর খেলা ও বিসর্জন</td>
+</tr>
+
+</table>
+
+</div>
 
 </section>
 
 
 <!-- EVENTS -->
+
 <section id="events">
 
-  <div class="title">
-    <h2>🎭 Events & Programs</h2>
-    <p>সাংস্কৃতিক অনুষ্ঠান ও বিশেষ আয়োজন</p>
-  </div>
+<div class="section-title">
 
-  <div class="cards">
+<h2>🎭 Events & Programs</h2>
 
-    <div class="card">
-      <h3>🎶 Cultural Program</h3>
-      <p>
-        গান, নাচ ও বিভিন্ন সাংস্কৃতিক অনুষ্ঠান।
-      </p>
-    </div>
+<p>সাংস্কৃতিক অনুষ্ঠান ও বিশেষ আয়োজন</p>
 
-    <div class="card">
-      <h3>🥁 Dhak & Dhunuchi</h3>
-      <p>
-        ঢাকের বাদ্যি ও ধুনুচি নাচের বিশেষ আয়োজন।
-      </p>
-    </div>
+</div>
 
-    <div class="card">
-      <h3>🏆 Competition</h3>
-      <p>
-        শিশু ও সকল বয়সের জন্য বিভিন্ন প্রতিযোগিতা।
-      </p>
-    </div>
+<div class="cards">
 
-  </div>
+<div class="card">
+
+<div class="card-icon">🎶</div>
+
+<h3>Cultural Program</h3>
+
+<p>
+গান, নাচ এবং বিভিন্ন সাংস্কৃতিক
+অনুষ্ঠানের মাধ্যমে শারদ উৎসব উদযাপন।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🥁</div>
+
+<h3>Dhak & Dhunuchi</h3>
+
+<p>
+ঢাকের বাদ্যি এবং ধুনুচি নাচের
+মাধ্যমে পুজোর আনন্দ উদযাপন।
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-icon">🏆</div>
+
+<h3>Competition</h3>
+
+<p>
+শিশু ও সকল বয়সের জন্য
+বিভিন্ন আনন্দদায়ক প্রতিযোগিতা।
+</p>
+
+</div>
+
+</div>
 
 </section>
 
 
 <!-- GALLERY -->
+
 <section id="gallery">
 
-  <div class="title">
-    <h2>📸 Gallery</h2>
-    <p>Our Puja Memories</p>
-  </div>
+<div class="section-title">
 
-  <div class="gallery">
+<h2>📸 Gallery</h2>
 
-    <div>📷 Photo Coming Soon</div>
-    <div>📷 Photo Coming Soon</div>
-    <div>📷 Photo Coming Soon</div>
-    <div>📷 Photo Coming Soon</div>
+<p>আমাদের পুজোর কিছু মুহূর্ত</p>
 
-  </div>
+</div>
+
+<div class="gallery">
+
+<img src="1000017578.jpg" alt="Durga Puja">
+
+<img src="1000014257.jpg" alt="Puja Pandal">
+
+<img src="1000014263.jpg" alt="Pandal Construction">
+
+<img src="1000017575.jpg" alt="Durga Puja">
+
+</div>
+
+</section>
+
+
+<!-- DONATION -->
+
+<section id="donation">
+
+<div class="donation">
+
+<h2>❤️ Support Our Puja</h2>
+
+<p>
+
+আপনার সহযোগিতা আমাদের পুজোর আয়োজনকে
+আরও সুন্দর করে তুলতে সাহায্য করবে।
+
+<br>
+
+Scan the QR code to contribute.
+
+</p>
+
+<img
+class="qr"
+src="1000014186.png"
+alt="UPI Donation QR Code"
+>
+
+<p>
+🙏 আপনার সহযোগিতার জন্য ধন্যবাদ।
+</p>
+
+</div>
 
 </section>
 
 
 <!-- LOCATION -->
+
 <section id="location">
 
-  <div class="title">
-    <h2>📍 Visit Us</h2>
-    <p>আমাদের পুজো প্রাঙ্গণে আপনাকে স্বাগতম</p>
-  </div>
+<div class="section-title">
 
-  <div class="location">
+<h2>📍 Visit Us</h2>
 
-    <p>
-      Rautara, Kultikari, Shyampur,
-      Howrah, West Bengal - 711312
-    </p>
+<p>আমাদের পুজো প্রাঙ্গণে আপনাকে স্বাগতম</p>
 
-    <a
-      class="btn map-btn"
-      href="https://www.google.com/maps/search/?api=1&query=Rautara,Kultikari,Shyampur,Howrah,711312"
-      target="_blank">
-      📍 Open Google Maps
-    </a>
+</div>
 
-  </div>
+<div class="location">
+
+<p class="address">
+
+<strong>Rautara Blue Star Yubo Sangho</strong>
+
+<br>
+
+Rautara, Kultikari, Shyampur
+
+<br>
+
+Howrah, West Bengal - 711312
+
+</p>
+
+<br>
+
+<a
+class="btn"
+href="https://www.google.com/maps/search/?api=1&query=Rautara,Kultikari,Shyampur,Howrah,711312"
+target="_blank"
+>
+
+📍 Open Google Maps
+
+</a>
+
+</div>
 
 </section>
 
 
 <!-- FOOTER -->
+
 <footer>
 
-  <h3>Rautara Blue Star Yubo Sangho</h3>
+<h3>
+Rautara Blue Star Yubo Sangho
+</h3>
 
-  <p>
-    শুভ শারদীয়া 🌺
-  </p>
+<p>
+শুভ শারদীয়া 🌺
+</p>
 
-  <p>
-    © 2026 Rautara Blue Star Yubo Sangho
-  </p>
+<p>
+© 2026 Rautara Blue Star Yubo Sangho
+</p>
 
 </footer>
+
+
+<!-- COUNTDOWN -->
+
+<script>
+
+const pujaDate =
+new Date("October 16, 2026 00:00:00").getTime();
+
+
+function updateCountdown(){
+
+const now =
+new Date().getTime();
+
+const distance =
+pujaDate - now;
+
+
+if(distance <= 0){
+
+document.getElementById("days").innerText="00";
+document.getElementById("hours").innerText="00";
+document.getElementById("minutes").innerText="00";
+document.getElementById("seconds").innerText="00";
+
+return;
+
+}
+
+
+const days =
+Math.floor(
+distance/(1000*60*60*24)
+);
+
+
+const hours =
+Math.floor(
+(distance%(1000*60*60*24))
+/
+(1000*60*60)
+);
+
+
+const minutes =
+Math.floor(
+(distance%(1000*60*60))
+/
+(1000*60)
+);
+
+
+const seconds =
+Math.floor(
+(distance%(1000*60))
+/
+1000
+);
+
+
+document.getElementById("days").innerText =
+String(days).padStart(2,"0");
+
+document.getElementById("hours").innerText =
+String(hours).padStart(2,"0");
+
+document.getElementById("minutes").innerText =
+String(minutes).padStart(2,"0");
+
+document.getElementById("seconds").innerText =
+String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+setInterval(updateCountdown,1000);
+
+</script>
 
 </body>
 </html>
